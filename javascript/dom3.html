@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:grid;
+            height:90vh;
+            width:100vw;
+            grid-template-columns:auto auto auto auto;
+            grid-template-rows:auto auto auto auto;
+
+        }
+        aside{
+            height: 100px;
+            width: 100px;
+            border: 2px solid red;
+        }
+
+
+    </style>
+</head>
+<body>
+  <div class="container">
+    <aside>
+        <section></section>
+        <p>click</p>
+    </aside>
+    <aside>
+        <section></section>
+        <p>dbclick</p>
+    </aside>
+    <aside>
+        <section></section>
+        <p>mouseout</p>
+    </aside>
+    <aside>
+        <section></section>
+        <p>mouseover</p>
+    </aside>
+    <aside>
+        <section></section>
+        <p>keyup</p>
+    </aside>
+    <aside>
+        <section></section>
+        <p>keydown</p>
+    </aside>
+    <aside>
+        <section></section>
+        <p>keypress</p>
+    </aside>
+    <aside>
+        <section></section>
+        <p>resize</p>
+    </aside>
+   
+
+
+  </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+    
+
+
+    <script>
+    
+        function test()
+        {
+            let ran=`#${Math.floor(Math.random()*1000000)}`
+            return ran
+// console.log(ran)
+// document.body.style.background=ran
+        }
+        
+        
+        // function  givecoloar1sec()
+        // {
+        //     var as=document.querySelectorAll("aside")
+        //     for (let i=0; i< as.length; i++)
+        //      {    
+        //            setTimeout(()=>{
+        //             as[i].style.background=test()
+        //            },i*1000)
+        //     }
+        // }
+        var events=["click","dbclick","mouseout","mouseover","keyup","keydown","keypress","resize"]
+        let section=document.querySelectorAll("section")
+        let paras=document.querySelectorAll("p")
+        for(let i=0;i<events.length;i++)
+        {
+            if(i<4)
+            {
+                paras[i].addEventListener(events[i],()=>{
+                    section[i].style.background=generateRandom();
+                })
+            }
+            else
+            {
+                window.addEventListener(events[i],()=>{
+                section[i].style.background=generateRandom()
+                })
+            }
+        }
+    
+        </script>
+</body>
+
+</html>--

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- JSON
+    lang used to communucate between java and javascript -->
+<table border="2px">
+    <tr>
+        <th>name</th>
+        <th>image</th>
+        <th>github link</th>
+    </tr>
+
+
+</table>
+
+</body>
+
+<script>
+let obj={
+    name:"raj",
+    id:123
+}
+console.log(obj);
+
+let jsonObj=JSON.stringify(obj)
+console.log(jsonObj);
+let jsObj=JSON.parse(jsonObj);
+console.log(jsObj);
+let tab=document.querySelector("table")
+
+// let ans=fetch("https://api.github.com/users").then((res)=>{
+// console.log(res);
+// return res.json()
+// }).then((data)=>{
+
+//     console.log(data);
+// console.log(data[0].avatar_url);
+// data.forEach(element => {
+//     console.log(element);
+//     tab.innerHTML+=`<tr>
+//     <th>${element.login}</th>
+//     <th><img src=${element.avatar_url} alt="" height="100px"></th>
+//     <th><a href=${element.html_url}>git hub link</a></th>
+// </tr>`
+    
+// });
+
+// })
+// console.log(ans);
+async function fetchData()
+{
+try{
+    let response=await fetch("https://api.github.com/users")
+let jsObj=await response.json()
+console.log(jsObj);
+}
+catch(err)
+{
+console.log(err);
+}
+}
+fetchData()
+</script>
+</html>

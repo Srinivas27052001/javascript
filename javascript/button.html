@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div><button>minus</button><h2>0</h2><button>plus</button></div>
+<script>
+    
+
+
+
+
+    let btn =document.querySelectorAll("button")
+    let h2=document.querySelector("h2")
+    console.log(typeof h2.innerText)
+    btn[0].addEventListener("click",()=>{
+        let val=Number(h2.innerText)
+        val--
+        h2.innerText=val
+
+        let body=document.querySelector("body")
+        if(val==0)
+        {
+            body.style.background="blue"
+        }
+        else if(val<0)
+        {
+            body.style.background="red"
+         
+        }
+        else if(val>0)
+        {
+            body.style.background="green"
+        }
+        
+    
+
+    })
+    btn[1].addEventListener("click",()=>{
+        let val=Number(h2.innerText)
+        val++
+        h2.innerText=val
+        let body=document.querySelector("body")
+        if(val==0)
+        {
+            body.style.background="blue"
+        }
+        else if(val<0)
+        {
+            body.style.background="red"
+         
+        }
+        else if(val>0)
+        {
+            body.style.background="green"
+        }
+    })
+
+</script>
+</body>
+</html>

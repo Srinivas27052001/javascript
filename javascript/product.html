@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            display: flex;
+            justify-content:center;
+            align-items:center;
+        }
+        #div{
+            border:5px solid black;
+            width: 500px;
+             /* display: inline-flex;  */
+             justify-content:space-evenly;
+            align-items:center;  
+            /* background-color:rgb(236, 216, 216); */
+        }
+        img{
+            border:2px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div id="div">
+      <center> <img src="./mobile1.avif" alt="" height="300px" width="400px"></center>  
+   <div class="a"> PRICE= <h2 id="A1">200</h2></div>
+   <div class="a"> QUANTITY =<button>-</button><h2 id="A2">0</h2><button>+</button></div>
+   <div class="a"> DISCOUNT   =<h2 id="A3">33</h2><b>%</b></div>
+   <div class="a"> DISCOUNT PRICE  =<h2 id="A4"></h2></div>
+   <div class="a"> DELIVERY  = <h2 id="A41">5</h2><b>%</b></div>
+   <div class="a"> DELIVERY CHARGES  =<h2 id="A5">10</h2></div>
+   <div class="a"> TOTAL SUM  =<h2 id="A6"></h2></div>
+   </div>
+
+   <script>
+
+let btn =document.querySelectorAll("button")
+    let A2=document.querySelector("#A2")
+    // console.log(typeof A2.innerText)
+    
+    btn[0].addEventListener("click",()=>{
+        let val=Number(A2.innerText)
+        if(val>0)
+        {
+        val--
+        }
+        
+        A2.innerText=val
+        x(val)      
+    })
+    btn[1].addEventListener("click",()=>{
+        let val=Number(A2.innerText)
+        val++
+        A2.innerText=val
+        x(val)     
+    })
+
+let A1=document.querySelector("#A1")
+let x= (v)=>{
+   
+        let val1=Number(A1.innerText);
+        if(v>0)
+        A1.innerText=200*v
+     dp(A1.innerText)
+     gj(A1.innerText)
+       
+    }
+let A4=document.querySelector("#A4")
+let A3=document.querySelector("#A3")
+let dp=(q)=>{
+    
+    let val2=Number(A1.innerText)
+    let val0=Number(A3.innerText)
+        A4.innerText=parseInt(Number(q)*((100-val0)/100))
+     totalsum(A4.innerText)
+}
+
+let A41=document.querySelector("#A41")
+let A5=document.querySelector("#A5")
+let gj=(r)=>{
+    let val41=Number(A41.innerText)
+    
+        A5.innerText=parseInt(Number(r)*((val41)/100))
+     
+}
+
+
+let A6=document.querySelector("#A6")
+let totalsum=(a)=>{
+    let val4=Number(A5.innerText)
+    A6.innerText=Number(a)+val4
+
+
+}
+
+
+   
+   </script>
+    
+</body>
+</html>

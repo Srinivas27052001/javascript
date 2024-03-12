@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    //     let  num1=1
+    //     function * generatorNum()
+    //     {
+    //         while(true)
+    //         {
+    //             yield num1
+    //             num1++
+    //         }
+    //     }
+    //     var generatorobj=generatorNum()
+    //    console.log(generatorobj.next().value)
+    //     console.log(generatorobj.next().value)
+    //     console.log(generatorobj.next().value)
+
+    // function hof()
+    // {
+    //     add()
+    //     console.log("hello");   
+    // }
+    // function add ()
+    //     {
+    //         console.log("im add");
+    //     }
+    // hof()
+    function test()
+    {
+       console.log(add());
+        console.log("i am a test");
+        function add(){
+        console.log("hleo");
+    return 4}
+    }
+    test()
+
+
+
+    </script>
+</body>
+</html>

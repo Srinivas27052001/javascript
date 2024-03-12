@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:grid;
+            height:90vh;
+            width:100vw;
+            grid-template-columns:auto auto auto auto;
+            grid-template-rows:auto auto auto auto;
+
+        }
+        aside{
+            height: 100px;
+            width: 100px;
+            border: 2px solid red;
+        }
+
+    </style>
+</head>
+<body>
+   <div class="container">
+    <aside></aside>
+   
+    <aside></aside>
+    <aside></aside>
+    <aside></aside>
+    <aside></aside>
+    <aside></aside>
+    <aside></aside>
+    <aside></aside>
+    <aside></aside>
+    <aside></aside>
+    <aside></aside>
+    <aside></aside>
+    <aside></aside>
+    <aside></aside>
+    <aside></aside>
+    <aside></aside>
+    
+   </div>
+   <button>click</button>
+  
+    
+   
+    
+
+
+    <script>
+    
+
+    var btn=document.querySelector("button")
+    btn.addEventListener("click",givecoloar1sec)
+        function test()
+        {
+            let ran=`#${Math.floor(Math.random()*1000000)}`
+           
+// console.log(ran)
+// document.aside.style.background=ran
+return ran
+        }
+        
+        
+        function  givecoloar1sec()
+        {
+            var as=document.querySelectorAll("aside")
+            for (let i=0; i< as.length; i++)
+             {    
+                   setTimeout(()=>{
+                    as[i].style.background=test()
+                   },i*100)
+            }
+        }
+    
+        </script>
+</body>
+
+</html>
